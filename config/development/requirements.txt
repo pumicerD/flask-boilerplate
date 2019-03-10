@@ -10,6 +10,7 @@ coverage
 ecdsa
 itsdangerous
 paramiko
-pycrypto
+# pycrypto
+pycryptodome
 Flask-WTF
 pytest-xdist

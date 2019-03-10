@@ -1,0 +1,30 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <h1>Play Sudoku</h1>
+</div>
+<!-- <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.</p> -->
+
+<div class="game-container">
+  <div class="grid-container">
+    <form action="{{ url_for('pages.solution') }}" method="post" name="sudoku-input">
+      {% for i in range(9) %}
+        <div class="grid-row">
+          {% for j in range(9) %}
+            <div class="grid-cell">
+              <input type="text" maxlength="1" name='cell-input[{{ j+i*9 }}]' class="def-txt-input">
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+      <div class="button-container">
+        <input type="submit" value="Solve" class="btn btn-primary btn-block">
+        <button id="clear-btn" type="button" class="btn btn-secondary btn-block">Clear</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
