@@ -29,4 +29,3 @@ class ForgotForm(FlaskForm):
     email = TextField(
         'Email', validators=[DataRequired(), Length(min=6, max=40)]
     )
-
